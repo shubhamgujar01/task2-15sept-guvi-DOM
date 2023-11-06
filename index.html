@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        select[multiple] {
+            height: auto;
+        }
+
+        .gender-label {
+            margin-right: 20px;
+        }
+
+        .checkbox-group {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form action="#" method="post" id="registrationForm">
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" name="pincode" required>
+            </div>
+            <div class="form-group">
+                <label class="gender-label">Gender:</label>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+            </div>
+            <div class="form-group">
+                <label>Choice of Food (Select at least 2):</label>
+                <div>
+                    <input type="checkbox" id="maggie" name="food[]" value="Maggie">
+                    <label for="maggie">Maggie</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="pasta" name="food[]" value="Pasta">
+                    <label for="pasta">Pasta</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="chicken" name="food[]" value="Chicken">
+                    <label for="chicken">Chicken</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="paneer" name="food[]" value="Paneer">
+                    <label for="paneer">Paneer</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="soya" name="food[]" value="Soya">
+                    <label for="soya">Soya</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required>
+            </div>
+            <div class="checkbox-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Pincode</th>
+                    <th>Gender</th>
+                    <th>Choice of Food</th>
+                    <th>State</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="firstNameValue"></td>
+                    <td id="lastNameValue"></td>
+                    <td id="addressValue"></td>
+                    <td id="pincodeValue"></td>
+                    <td id="genderValue"></td>
+                    <td id="foodValue"></td>
+                    <td id="stateValue"></td>
+                    <td id="countryValue"></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
